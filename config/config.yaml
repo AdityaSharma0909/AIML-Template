@@ -1,0 +1,45 @@
+# Application configuration
+
+parser:
+  supported_formats: [pdf, docx, txt]
+  max_file_size_mb: 10
+
+features:
+  skills:
+    taxonomy_path: config/skills_taxonomy.json
+    fuzzy_threshold: 0.85
+  experience:
+    date_formats:
+      - "%b %Y"
+      - "%B %Y"
+      - "%m/%Y"
+      - "%Y"
+  education:
+    degree_keywords:
+      - bachelor
+      - master
+      - phd
+      - doctorate
+      - mba
+      - btech
+      - mtech
+
+similarity:
+  method: hybrid           # tfidf | embedding | hybrid
+  embedding_model: sentence-transformers/all-MiniLM-L6-v2
+  tfidf_weight: 0.4
+  embedding_weight: 0.6
+
+ranking:
+  weights:
+    skills: 0.45
+    experience: 0.30
+    education: 0.15
+    semantic: 0.10
+  min_score_threshold: 0.30
+
+api:
+  host: 0.0.0.0
+  port: 8000
+  cors_origins:
+    - http://localhost:3000
