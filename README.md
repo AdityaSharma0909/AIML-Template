@@ -180,3 +180,41 @@ This project is part of the AI/ML track for **[hireai.rooman.com](https://hireai
 ## License
 
 MIT — see `LICENSE`.
+
+---
+
+## ResumeRank Notebook Overview
+
+This section documents the `ResumeRank.ipynb` notebook, which implements a prototype resume ranking system using NLP and semantic similarity.
+
+### Notebook Purpose
+
+The notebook is designed to parse resumes in `PDF`, `DOCX`, or `TXT` formats, extract relevant content, and compare candidate profiles against a job description using:
+
+- keyword extraction,
+- TF-IDF similarity,
+- sentence-transformer embeddings,
+- skills and programming language overlap,
+- experience scoring.
+
+### Key Notebook Components
+
+- **Text extraction** from PDF, DOCX, and TXT files
+- **Text cleaning** for normalization and noise removal
+- **Skill & language matching** using predefined keyword lists
+- **Experience scoring** based on year mentions in resumes
+- **Hybrid ranking** that combines rule-based and semantic metrics
+- **Gradio-ready UI** support for interactive resume upload and scoring
+
+### How to Run the Notebook
+
+1. Open `ResumeRank.ipynb` in Jupyter or VS Code.
+2. Run the setup cell to install required packages.
+3. Execute the notebook cells in order.
+4. Upload resumes and paste a job description in the Gradio interface.
+
+### Notes
+
+- The notebook is a prototype and best used as a proof-of-concept.
+- It uses a simple rule-based extractor rather than a fully robust resume parser.
+- Future improvements can include better NLP extraction, a dynamic skill taxonomy, and more advanced ranking logic.
